@@ -1,0 +1,17 @@
+# Bỏ qua file thực thi và file tạm
+*.exe
+*.o
+*.obj
+*.log
+
+# Bỏ qua thư mục build của Code::Blocks
+bin/
+obj/
+
+# Bỏ qua file dự án Code::Blocks (tùy chọn, nếu bạn không muốn đẩy lên)
+*.cbp
+*.depend
+*.layout
+
+# Bỏ qua các file DLL (nếu bạn không muốn đẩy lên)
+*.dll
