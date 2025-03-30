@@ -8,20 +8,21 @@
 #include "Texture.h"
 #include "GameState.h"
 
+// Lớp chính quản lý trò chơi
 class Game {
 public:
-    Game();
-    ~Game();
+    Game();      // Constructor
+    ~Game();     // Destructor
 
-    bool init();
-    void run();
+    bool init();  // Khởi tạo trò chơi
+    void run();   // Chạy trò chơi
 
 private:
-    void close();
+    void close();  // Giải phóng tài nguyên
 
-    Texture backgroundTexture, groundTexture;
-    GameState gameState;
-    int state; // 0: MENU, 1: PLAYING, 2: HELP
+    Texture backgroundTexture, groundTexture;  // Texture cho nền và mặt đất
+    GameState gameState;                      // Trạng thái trò chơi
+    int state;  // Trạng thái hiện tại (0: MENU, 1: PLAYING, 2: HELP)
 };
 
 #endif
