@@ -63,15 +63,15 @@ bool Game::init() {
         return false;
     }
 
-    // Tải texture nền và mặt đất
+    // Tải texture nền (bỏ tải groundTexture)
     if (!backgroundTexture.loadFromFile("background.png")) {
         std::cout << "Failed to load backgroundTexture!" << std::endl;
         return false;
     }
-    if (!groundTexture.loadFromFile("ground.png")) {
-        std::cout << "Failed to load groundTexture!" << std::endl;
-        return false;
-    }
+    // if (!groundTexture.loadFromFile("ground.png")) {  // Xóa hoặc bình luận
+    //     std::cout << "Failed to load groundTexture!" << std::endl;
+    //     return false;
+    // }
 
     gameState.init();  // Khởi tạo trạng thái trò chơi
 
@@ -106,9 +106,9 @@ void Game::run() {
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);  // Xóa màn hình (màu trắng)
         SDL_RenderClear(renderer);
 
-        // Vẽ nền và mặt đất
+        // Vẽ nền (bỏ vẽ mặt đất)
         backgroundTexture.render(0, 0, nullptr, SCREEN_WIDTH, SCREEN_HEIGHT);
-        groundTexture.render(0, SCREEN_HEIGHT - GROUND_HEIGHT, nullptr, SCREEN_WIDTH, GROUND_HEIGHT);
+        // groundTexture.render(0, SCREEN_HEIGHT - GROUND_HEIGHT, nullptr, SCREEN_WIDTH, GROUND_HEIGHT);  // Xóa hoặc bình luận
 
         gameState.update(state);  // Cập nhật trạng thái trò chơi
         gameState.render(state);  // Vẽ trạng thái trò chơi

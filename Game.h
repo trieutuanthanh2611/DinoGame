@@ -20,9 +20,9 @@ public:
 private:
     void close();  // Giải phóng tài nguyên
 
-    Texture backgroundTexture, groundTexture;  // Texture cho nền và mặt đất
-    GameState gameState;                      // Trạng thái trò chơi
-    int state;  // Trạng thái hiện tại (0: MENU, 1: PLAYING, 2: HELP)
+    Texture backgroundTexture;  // Texture cho nền (xóa groundTexture)
+    GameState gameState;        // Trạng thái trò chơi
+    int state;                  // Trạng thái hiện tại (0: MENU, 1: PLAYING, 2: HELP)
 };
 
 #endif
